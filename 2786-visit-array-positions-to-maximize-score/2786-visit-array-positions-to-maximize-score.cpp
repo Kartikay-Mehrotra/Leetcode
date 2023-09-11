@@ -11,7 +11,7 @@ public:
             take= nums[index]+helper(index+1,p,nums,x,dp);
         }
         else{
-            take= nums[index]-x + helper(index+1,nums[index]%2,nums,x,dp);
+            take= nums[index]-x + helper(index+1,!p,nums,x,dp);
         }
         return dp[index][p]= max(take,nottake);
     }
