@@ -19,7 +19,9 @@ public:
                 l=m+1;
             }
         }
-        long long a1=calc(l,nums,cost), a2=calc(l-1,nums,cost);
+        long long a1=calc(l,nums,cost);
+        return a1;
+        long long a2=calc(l-1,nums,cost);
         return min(a1,a2);
     }
 };
