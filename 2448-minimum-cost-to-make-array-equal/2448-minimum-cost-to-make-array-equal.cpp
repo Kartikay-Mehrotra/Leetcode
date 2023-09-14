@@ -18,10 +18,10 @@ public:
             else {
                 l=m+1;
             }
+            ans=min({ans,a1,a2});
         }
         long long a1=calc(l,nums,cost);
         return a1;
-        long long a2=calc(l-1,nums,cost);
-        return min(a1,a2);
+        
     }
 };
