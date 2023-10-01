@@ -17,11 +17,11 @@ public:
         queue<TreeNode*> q;
         q.push(root);
         vector<vector<int>> ans;
-        vector<int> mid;
+       
         while(q.size())
         {
             int s=q.size();
-            mid.clear();
+            vector<int> mid;
             for(int i=0;i<s;i++)
             {
                 
