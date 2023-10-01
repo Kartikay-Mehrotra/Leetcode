@@ -13,8 +13,8 @@ public:
     ListNode* reverseKGroup(ListNode* head, int k) {
         if(head==NULL || head->next==NULL)
             return head;
-        int count=0;
         ListNode* temp=head;
+        int count=0;
         while(temp!=NULL)
         {
             temp=temp->next;
@@ -22,12 +22,11 @@ public:
         }
         if(count<k)
             return head;
-        
-        count=k;
-        temp=head;
         ListNode* prev=NULL;
         ListNode* nex=NULL;
-        while(temp!=NULL && count--)
+        temp=head;
+        int c=k;
+        while(c--)
         {
             nex=temp->next;
             temp->next=prev;
@@ -35,6 +34,7 @@ public:
             temp=nex;
         }
         head->next=reverseKGroup(temp,k);
-        return prev ;
+        return prev;
+        
     }
 };
