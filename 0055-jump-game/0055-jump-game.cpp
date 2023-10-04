@@ -10,11 +10,9 @@ bool canJump(vector<int>& nums) {
 
         maxReach = std::max(maxReach, i + nums[i]);
 
-        if (maxReach >= nums.size() - 1) {
-            return true;
         }
-    }
+    
 
-    return false;
+    return true;
 }
 };
