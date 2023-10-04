@@ -9,13 +9,13 @@ static bool comp(vector<int> &a,vector<int> &b) {
         sort(intervals.begin(),intervals.end(),comp);
         int ans=0;
         vector<int> prev=intervals[0];
-        for(vector<int> i:intervals)
+        for(int i=1;i<intervals.size();i++)
         {
-            if(prev[1]>i[0])
+            if(prev[1]>intervals[i][0])
             ans++;
             else
-            prev=i;
+            prev=intervals[i];
         }
-        return ans-1;
+        return ans;
     }
 };
