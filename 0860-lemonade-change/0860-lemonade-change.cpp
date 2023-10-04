@@ -12,16 +12,16 @@ public:
                     five--;
                     ten++;
                 } else {
-                    return false; // Cannot give change for a 10-dollar bill.
+                    return false; 
                 }
-            } else { // A 20-dollar bill
+            } else {
                 if (ten > 0 && five > 0) {
                     ten--;
                     five--;
                 } else if (five >= 3) {
                     five -= 3;
                 } else {
-                    return false; // Cannot give change for a 20-dollar bill.
+                    return false; 
                 }
             }
         }
