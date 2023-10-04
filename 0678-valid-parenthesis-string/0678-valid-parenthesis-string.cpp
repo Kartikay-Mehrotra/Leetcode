@@ -4,6 +4,8 @@ public:
     {
         if(i==s.length())
         return open==0;
+        if(open<0)
+            return false;
         if(dp[i][open]!=-1)
         return dp[i][open];
         bool ans=false;
@@ -12,13 +14,13 @@ public:
             ans=solve(i+1,open+1,s,dp);
         }
         else if(s[i]==')')
-     {   if(open)
+     {  
         ans=solve(i+1,open-1,s,dp);
     }
     else
     {
         ans|=solve(i+1,open,s,dp);
-        if(open)
+       
         ans|=solve(i+1,open-1,s,dp);
         ans|=solve(i+1,open+1,s,dp);
     }
