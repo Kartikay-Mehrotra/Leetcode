@@ -4,7 +4,7 @@ public:
         int n=nums.size();
         vector<int> dp(n,1);
         vector<int> hash(n);
-        int last=-1;
+        int last=0;
         int maxi=1;
         for(int i=0;i<n;i++)
         {
@@ -23,16 +23,17 @@ public:
                 last=i;
             }
         }
-        // vector<int> temp;
-        // temp.push_back(nums[last]);
-        // while(hash[last]!=last)
-        // {
-        //     last=hash[last];
-        //     temp.push_back(nums[last]);
-        // }
-        // reverse(temp.begin(),temp.end());
-        // for(auto i:temp)
-        //     cout<<i<<" ";
+      
+        vector<int> temp;
+        temp.push_back(nums[last]);
+        while(hash[last]!=last)
+        {
+            last=hash[last];
+            temp.push_back(nums[last]);
+        }
+        reverse(temp.begin(),temp.end());
+        for(auto i:temp)
+            cout<<i<<" ";
         return maxi;
     }
 };
