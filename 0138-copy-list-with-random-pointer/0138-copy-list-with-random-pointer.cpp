@@ -18,7 +18,7 @@ class Solution {
 public:
     Node* copyRandomList(Node* head) {
         if(head==NULL)
-            return NULL;
+            return head;
         Node* curr=head;
         Node* temp;
         while(curr!=NULL)
@@ -44,9 +44,10 @@ public:
         {
             org->next=copy->next;
             copy->next=copy->next?copy->next->next:copy->next;
-            copy=copy->next;
             org=org->next;
+            copy=copy->next;
         }
         return temp;
+        
     }
 };
