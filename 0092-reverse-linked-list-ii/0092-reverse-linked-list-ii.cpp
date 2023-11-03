@@ -14,16 +14,18 @@ public:
         if(head==NULL || head->next==NULL)
             return head;
         ListNode* dummy=new ListNode(0,head);
-        ListNode* curr=head,*leftp=dummy;
-        for(int i=0;i<left-1;i++)
+        ListNode* leftp=dummy;
+        ListNode* curr=head;
+        for(int i=0;i<(left-1);i++)
         {
             leftp=curr;
             curr=curr->next;
         }
+        ListNode* n=NULL;
         ListNode* prev=NULL;
         for(int i=0;i<(right-left+1);i++)
         {
-            ListNode* n=curr->next;
+            n=curr->next;
             curr->next=prev;
             prev=curr;
             curr=n;
@@ -31,6 +33,5 @@ public:
         leftp->next->next=curr;
         leftp->next=prev;
         return dummy->next;
-        
     }
 };
