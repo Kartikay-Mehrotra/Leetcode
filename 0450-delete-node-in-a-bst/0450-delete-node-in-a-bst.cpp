@@ -35,8 +35,9 @@ public:
         {
             if(root->left==NULL && root->right==NULL)
             {
-                root=NULL;
-                return root;
+                // root=NULL;
+                // return root;
+                return NULL;
             }
             if(root->left !=NULL && root->right==NULL)
             {
