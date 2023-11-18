@@ -18,7 +18,6 @@ public:
                     low++;
                     while(high>low && nums[high]==nums[high-1])
                     high--;
-                    
                     low++;
                     high--;
                 }
